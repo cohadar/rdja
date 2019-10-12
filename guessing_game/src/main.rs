@@ -1,9 +1,11 @@
-fn main() {
-    let s = String::from("hello");
-
-    change(&s);
+fn fib(n: u32) -> u32 {
+    if n <= 0 {
+        1
+    } else {
+        n * fib(n - 1)
+    }
 }
 
-fn change(some_string: &String) {
-    some_string.push_str(", world");
+fn main() {
+    println!("fib({}) = {}", 5, fib(5))
 }
